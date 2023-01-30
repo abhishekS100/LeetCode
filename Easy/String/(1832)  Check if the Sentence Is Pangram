@@ -1,0 +1,24 @@
+class Solution {
+   
+    public boolean checkIfPangram(String sentence) {
+        boolean flag = false;
+        for(char ch = 'a'; ch <= 'z'; ch++){
+            boolean pangram = check_pangram(ch,sentence);
+            if(pangram == false){
+                flag = false;
+                break;
+            }
+            else
+                flag = true;
+        }
+        return flag;
+     }
+
+    public boolean check_pangram(char ch,String sentence){
+        for(char c : sentence.toCharArray()){
+                if(c == ch)
+                    return true;
+        }
+    return false;   
+    }
+}
